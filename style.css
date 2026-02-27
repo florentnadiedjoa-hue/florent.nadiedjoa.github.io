@@ -56,20 +56,16 @@ body {
 
   /* HEADER */
   .site-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 40px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    box-sizing: border-box;
-  }
+  /* plus de position: fixed ni de top: 0 */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
   
   .header-name {
     font-size: 1.3rem;
@@ -223,5 +219,6 @@ body {
   height: 200px;
   cursor: pointer;
 }
+
 
 
