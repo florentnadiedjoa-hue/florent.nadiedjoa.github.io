@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nadiedjoa Florent portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- defer : les scripts attendent que le DOM soit chargé -->
+  <script src="portfolio-animation1.js" defer></script>
+  <script src="projet-animation1.js" defer></script>
+  <script src="projet-animation2.js" defer></script>
+  <script src="projet-animation3.js" defer></script>
+  <script src="projet-animation4.js" defer></script>
+  <script src="projet-animation5.js" defer></script>
+  <script src="animation_soleil.js" defer></script>
+</head>
+<body class="page-portfolio">
+
+  <header class="site-header">
+    <a href="index.html" class="header-name">Florent Nadiedjoa</a>
+    <a href="contact.html" class="header-contact">Contact</a>
+  </header>
+
+  <main class="portfolio">
+
+    <canvas id="titleCanvas" data-link="portfolio.html" width="350" height="300"></canvas>
+
+    <div class="projects-grid">
+
+      <!-- ===== PROJET 1 ===== -->
+      <div class="project">
+        <canvas id="projectCanvas1" data-link="projet1.html" width="300" height="200"></canvas>
+        <h3>Projet jeu de plateau</h3>
+        <p>Découvrez mon jeu de plateau MMI : opération diplome</p>
+      </div>
+
+      <!-- ===== PROJET 2 ===== -->
+      <div class="project">
+        <canvas id="projectCanvas2" data-link="projet2.html" width="300" height="200"></canvas>
+        <h3>Projet bandeaux</h3>
+        <p>Mes bandeaux publicitaires sur le thème de la dune du pyla</p>
+      </div>
+
+      <!-- ===== PROJET 3 ===== -->
+      <div class="project">
+        <canvas id="projectCanvas3" data-link="projet3.html" width="300" height="200"></canvas>
+        <h3>Storyboard</h3>
+        <p>Le storyboard racontant comment une agente de sécurité a sauvé un musée d'une bombe</p>
+      </div>
+
+      <!-- ===== PROJET 4 ===== -->
+      <div class="project">
+        <canvas id="projectCanvas4" data-link="projet4.html" width="300" height="200"></canvas>
+        <h3>Texte en 3D</h3>
+        <p>Petit texte animé en 3D sur blender</p>
+      </div>
+
+      <!-- ===== PROJET 5 ===== -->
+      <div class="project">
+        <canvas id="projectCanvas5" data-link="projet5.html" width="300" height="200"></canvas>
+        <h3>Lost in the temple - annexe</h3>
+        <p>Ma contribution avec mon projet annexe sur le projet Lost in the Temple de M.I.M.I.C</p>
+      </div>
+
+    </div> <!-- fin .projects-grid -->
+
+  </main>
+
+  <!-- Zone animation bas de page -->
+  <div class="portfolio-animation">
+    <canvas id="portfolioCanvas" width="900" height="300"></canvas>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet 5 – Lost in the Temple</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projet-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 40px 80px 40px;
+    }
+
+    /* Image hero */
+    .hero-image {
+      width: 300px;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 4px 4px 0px black;
+      margin: 0 auto 40px auto;
+      display: block;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 300px;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* Titre */
+    .projet-page h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* Layout principal */
+    .projet-layout {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Zone texte */
+    .projet-texte {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Image avant le texte */
+    .texte-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 3px 3px 0px black;
+      display: block;
+    }
+
+    .texte-image-placeholder {
+      width: 100%;
+      height: 200px;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    .projet-texte p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #222;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .projet-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="page-portfolio">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="portfolio.html" class="header-name">Florent Nadiedjoa</a>
+    <a href="contact.html" class="header-contact">Contact</a>
+  </header>
+
+  <main class="projet-page">
+
+    <!-- Image au-dessus du titre -->
+    <img class="hero-image" src="projet5/cliff_moustache.png" alt="Image principale du projet"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="hero-image-placeholder" style="display:none;">Image principale</div>
+
+    <h1>Lost in the Temple – Annexe</h1>
+
+    <div class="projet-layout">
+
+      <!-- Texte à gauche -->
+      <div class="projet-texte">
+
+        <!-- Image avant le texte -->
+        <img class="texte-image" src="projet5/projet_en_cours.png" alt="Image du projet"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="texte-image-placeholder" style="display:none;">Image (texte-img.png)</div>
+
+        <p>
+          Le but de ce projet, qui est le plus gros projet de mes années d'étude en BUT MMI ainsi que le dernier projet de l'année, consiste à créer une expérience mélangeant réalité et virtuel. Dans l'équipe dans laquelle je suis, M.I.M.I.C, nous avons décidé de faire un jeu où un joueur avec un casque de réalité virtuelle, doit sortir dans le temps imparti du labyrinthe du temple, en résolvant des énigmes et avec l'aide des autres joueurs qui auront sous les yeux un vrai plateau du labyrinthe avec des indices pour aider le joueur avec le casque VR. Et moi mon rôle est de faire un projet annexe qui viendrait s'ajouter à ce projet. 
+          Et pour ça je vais vous raconter une histoire, via la réalité augmentée...
+        </p>
+        <p>
+          Bien que j'aimerais beaucoup vous montrer ce que j'ai fait, le projet est encore en cours actuellement, et j'ai encore du pain sur la planche, mais croyez bien que lorsque ça sera fini je les mettrais.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

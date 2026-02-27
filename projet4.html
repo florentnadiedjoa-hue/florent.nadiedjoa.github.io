@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet 4 – Texte en 3D</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projet-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 40px 80px 40px;
+    }
+
+    /* Image hero */
+    .hero-image {
+      width: 300px;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 4px 4px 0px black;
+      margin: 0 auto 40px auto;
+      display: block;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 300px;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* Titre */
+    .projet-page h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    /* Layout principal */
+    .projet-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Zone texte */
+    .projet-texte p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    /* Zone vidéo */
+    .projet-video {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .projet-video video {
+      width: 100%;
+      border: 2px solid black;
+      box-shadow: 4px 4px 0px black;
+      display: block;
+      background: #000;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .projet-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="page-portfolio">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="portfolio.html" class="header-name">Florent Nadiedjoa</a>
+    <a href="contact.html" class="header-contact">Contact</a>
+  </header>
+
+  <main class="projet-page">
+
+    <!-- Image au-dessus du titre -->
+    <img class="hero-image" src="projet4/ilestla.png" alt="Image principale du projet"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="hero-image-placeholder" style="display:none;">Image principale</div>
+
+    <h1>Texte en 3D</h1>
+
+    <div class="projet-layout">
+
+      <!-- Texte à gauche -->
+      <div class="projet-texte">
+        <p>
+          Le projet consistait à animer des lettres et donc un mot grâce aux geometry nodes.
+        </p>
+        <p>
+            C'est un plus petit projet mais je l'ai trouvé étonnamment reposant à faire.
+        </p>
+      </div>
+
+      <!-- Vidéo à droite -->
+      <div class="projet-video">
+        <!-- Remplacez "projet4/video.mp4" par le chemin de votre vidéo -->
+        <!-- Formats supportés : mp4, webm, ogg -->
+        <video controls preload="metadata"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <source src="projet4/Nadiedjoa_Florent_text.mp4" type="video/mp4">
+          <source src="projet4/video.webm" type="video/webm">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+        <div class="video-placeholder" style="display:none;">
+          Vidéo introuvable — placez votre fichier dans projet4/video.mp4
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

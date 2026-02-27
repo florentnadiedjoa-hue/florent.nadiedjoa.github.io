@@ -1,0 +1,129 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+      <meta charset="UTF-8">
+      <title>Contact – Florent Nadiedjoa</title>
+      <link rel="stylesheet" href="style.css">
+      <style>
+        .contact-page {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 120px 40px 60px 40px;
+        }
+    
+        .contact-page h1 {
+          text-align: center;
+          font-size: 2rem;
+          margin-bottom: 50px;
+          letter-spacing: 0.05em;
+        }
+    
+        .contact-infos {
+          display: flex;
+          justify-content: center;
+          gap: 40px;
+          margin-bottom: 50px;
+          flex-wrap: wrap;
+        }
+    
+        .contact-infos a {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          text-decoration: none;
+          color: black;
+          font-size: 1rem;
+          border-bottom: 2px solid black;
+          padding-bottom: 2px;
+          transition: opacity 0.2s;
+        }
+    
+        .contact-infos a:hover {
+          opacity: 0.5;
+        }
+    
+        /* ===== Zone CV ===== */
+        .cv-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+    
+        .cv-section h2 {
+          font-size: 1.3rem;
+          letter-spacing: 0.05em;
+          margin-bottom: 10px;
+        }
+    
+        .cv-viewer {
+          width: 100%;
+          max-width: 800px;
+          height: 1000px;
+          border: 2px solid black;
+          box-shadow: 4px 4px 0px black;
+        }
+    
+        .btn-download {
+          display: inline-block;
+          padding: 12px 32px;
+          border: 2px solid black;
+          background: white;
+          color: black;
+          font-weight: bold;
+          font-size: 0.95rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+    
+        .btn-download:hover {
+          background: black;
+          color: white;
+        }
+      </style>
+    </head>
+    <body class="page-portfolio">
+    
+      <!-- Header -->
+      <header class="site-header">
+        <a href="portfolio.html" class="header-name">Florent Nadiedjoa</a>
+        <a href="contact.html" class="header-contact">Contact</a>
+      </header>
+    
+      <main class="contact-page">
+    
+        <h1>Contact</h1>
+    
+        <!-- Infos de contact -->
+        <div class="contact-infos">
+          <a href="mailto:florent.nadiedjoa@gmail.com">
+            ✉ florent.nadiedjoa@gmail.com
+          </a>
+        </div>
+    
+        <!-- CV -->
+        <div class="cv-section">
+          <h2>Mon CV</h2>
+    
+          <!-- Affichage du PDF -->
+          <iframe
+            class="cv-viewer"
+            src="contact/Nadiedjoa_Florent_CV.pdf"
+            type="application/pdf"
+            title="CV Florent Nadiedjoa">
+            Votre navigateur ne supporte pas l'affichage de PDF.
+            <a href="Nadiedjoa_Florent_CV.pdf">Cliquez ici pour le télécharger.</a>
+          </iframe>
+    
+          <!-- Bouton télécharger -->
+          <a class="btn-download" href="Nadiedjoa_Florent_CV.pdf" download="Nadiedjoa_Florent_CV.pdf">
+            ↓ Télécharger mon CV
+          </a>
+    
+        </div>
+    
+      </main>
+    
+    </body>
+    </html>

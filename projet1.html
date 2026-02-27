@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet 1 – Jeu de plateau</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projet-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 40px 80px 40px;
+    }
+
+    /* Image hero au-dessus du titre */
+    .hero-image {
+        width: 300px;
+        max-height: 400px;
+        object-fit: cover;
+        border: 2px solid black;
+        box-shadow: 4px 4px 0px black;
+        margin: 0 auto 40px auto; /* ✅ centré + espace en bas */
+        display: block;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 300px;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* Titre */
+    .projet-page h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    /* Layout principal : texte gauche / galerie droite */
+    .projet-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Zone texte */
+    .projet-texte p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    /* Galerie */
+    .projet-galerie {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .projet-galerie img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 3px 3px 0px black;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .projet-galerie img:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px black;
+    }
+
+    /* Placeholder pour les images manquantes */
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 0.8rem;
+    }
+
+    /* Lightbox simple */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border: 3px solid white;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .projet-layout {
+        grid-template-columns: 1fr;
+      }
+      .projet-galerie {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="page-portfolio">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="portfolio.html" class="header-name">Florent Nadiedjoa</a>
+    <a href="contact.html" class="header-contact">Contact</a>
+  </header>
+
+  <main class="projet-page">
+
+    <!-- Image au-dessus du titre -->
+    <!-- Remplacez src par votre image -->
+    <img class="hero-image" src="projet1/D20_page_projet1.png" alt="Image principale du projet"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="hero-image-placeholder" style="display:none;">Image principale (hero.jpg)</div>
+
+    <h1>Mon jeu de plateau MMI : opération diplôme</h1>
+
+    <div class="projet-layout">
+
+      <!-- Texte à gauche -->
+      <div class="projet-texte">
+        <p>
+          Pour ce projet, nous devions en groupe créer un jeu de plateau depuis zéro. Il fallait donc faire le plateau, les pions, les cartes, les dés, les règles, les visuels etc. Dans mon cas j'ai préféré le faire tout seul car j'avais une idée déjà bien précise en tête.
+        </p>
+        <p>
+            En effet j'ai eu comme idée de mélanger le jeu de l'oie avec Donjons et Dragons, mais version BUT MMI. Le but du jeu est d'obtenir son diplome. Pour cela on avance sur le plateau avec un dé à 6 faces, et une fois cela fait, pour pouvoir jouer au tour suivant, il faudra faire le score demandé sur la case avec le dé à 20 faces. Et si vous échouez vous resterez bloqué jusqu'à ce que vous obteniez un score égal ou supérieur à celui requis. Il y a aussi un système de monnaie qui permet d'acheter des cartes donnant divers bonus. 
+            C'est un projet que j'ai pris énormément de plaisir à faire vu comment il alliait 2D et 3D (pour moi en tout cas), et si c'était à refaire, ce serait avec grand plaisir.
+        </p>
+      </div>
+
+      <!-- Galerie à droite (14 images) -->
+      <div class="projet-galerie">
+        <!-- Remplacez les src par vos vraies images -->
+        <img src="projet1/D20.png" alt="Image 1" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img01.jpg</div>'">
+        <img src="projet1/D6.png" alt="Image 2" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img02.jpg</div>'">
+        <img src="projet1/pions.png" alt="Image 3" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img03.jpg</div>'">
+        <img src="projet1/impression_carte_cafe.jpg" alt="Image 4" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img04.jpg</div>'">
+        <img src="projet1/impression_carte_certificat.jpg" alt="Image 5" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img05.jpg</div>'">
+        <img src="projet1/impression_carte_pc.jpg" alt="Image 6" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img06.jpg</div>'">
+        <img src="projet1/piece.png" alt="Image 7" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img07.jpg</div>'">
+        <img src="projet1/terrain.pdf" alt="Image 8" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img08.jpg</div>'">
+        <img src="projet1/affiche.png" alt="Image 9" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img09.jpg</div>'">
+        <img src="projet1/règles.jpg" alt="Image 10" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img10.jpg</div>'">
+        <img src="projet1/cartes.jpg" alt="Image 11" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img11.jpg</div>'">
+        <img src="projet1/boite_haut.jpg" alt="Image 12" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img12.jpg</div>'">
+        <img src="projet1/boite_cote.jpg" alt="Image 13" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img13.jpg</div>'">
+        <img src="projet1/boite_cote_2.jpg" alt="Image 14" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img14.jpg</div>'">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">✕</span>
+    <img id="lightbox-img" src="" alt="Image agrandie">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>

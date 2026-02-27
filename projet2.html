@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projet 2 – Bandeaux publicitaires</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projet-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 40px 80px 40px;
+    }
+
+    /* Image hero au-dessus du titre */
+    .hero-image {
+      width: 300px;
+      max-height: 400px;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 4px 4px 0px black;
+      margin: 0 auto 40px auto;
+      display: block;
+    }
+
+    .hero-image-placeholder {
+      width: 100%;
+      height: 300px;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 40px;
+    }
+
+    /* Titre */
+    .projet-page h1 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    /* Layout principal : texte gauche / galerie droite */
+    .projet-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Zone texte */
+    .projet-texte p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    /* Galerie */
+    .projet-galerie {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .projet-galerie img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 2px solid black;
+      box-shadow: 3px 3px 0px black;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .projet-galerie img:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px black;
+    }
+
+    /* Placeholder pour les images manquantes */
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: 2px dashed #aaa;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+      font-size: 0.8rem;
+    }
+
+    /* Lightbox simple */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border: 3px solid white;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .projet-layout {
+        grid-template-columns: 1fr;
+      }
+      .projet-galerie {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="page-portfolio">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="portfolio.html" class="header-name">Florent Nadiedjoa</a>
+    <a href="contact.html" class="header-contact">Contact</a>
+  </header>
+
+  <main class="projet-page">
+
+    <!-- Image au-dessus du titre -->
+    <img class="hero-image" src="projet2/bandeau_rond_chill.png" alt="Image principale du projet"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="hero-image-placeholder" style="display:none;">Image principale</div>
+
+    <h1>Projet bandeaux – Dune du Pyla</h1>
+
+    <div class="projet-layout">
+
+      <!-- Texte à gauche -->
+      <div class="projet-texte">
+        <p>
+          A la base le but du projet était de faire ce projet mais sur la falaise d'Etretat, mais l'ayant fait l'année d'avant, le professeur m'a laissé le choix de la destination que je voulais. Et j'ai donc choisi la Dune du Pilat puisque j'y étais allé l'été de cette année-là.
+        </p>
+        <p>
+         J'ai bien aimé ce projet car il m'a vraiment poussé à trouver comment faire une texture de sable et d'eau sur illustrator, et j'ai aussi passé un bon moment à le faire.
+        </p>
+      </div>
+
+      <!-- Galerie à droite (6 images) -->
+      <div class="projet-galerie">
+        <img src="projet2/Nadiedjoa_Florent_TP10_Bandeaux_declines.png" alt="Image 1" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img01.jpg</div>'">
+        <img src="projet2/bandeau_biscarosse_carre.png" alt="Image 2" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img02.jpg</div>'">
+        <img src="projet2/bandeau_biscarosse_megabanner.png" alt="Image 3" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img03.jpg</div>'">
+        <img src="projet2/bandeau_biscarosse_rectangle.png" alt="Image 4" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img04.jpg</div>'">
+        <img src="projet2/bandeau_biscarosse_rond.png" alt="Image 5" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img05.jpg</div>'">
+        <img src="projet2/bandeau_biscarosse_skycraper.png" alt="Image 6" onclick="openLightbox(this.src)" onerror="this.outerHTML='<div class=\'img-placeholder\'>img06.jpg</div>'">
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">✕</span>
+    <img id="lightbox-img" src="" alt="Image agrandie">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
